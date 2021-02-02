@@ -5,7 +5,6 @@ from voip_survey.models import Submission
 from voip_survey import os
 import requests
 from datetime import date
-from voip_survey import path
 
 
 headers = {
@@ -28,7 +27,7 @@ def auth():
     return render_template('auth.html', title='Authenticate', form=form)
 
 
-@app.route("/voip/" + str(path), methods=['GET', 'POST'])
+@app.route("/voip/" + str(os.getenv('VOIP_PATH')), methods=['GET', 'POST'])
 def home():
     form = QuestionnaireForm()
     if form.validate_on_submit():
