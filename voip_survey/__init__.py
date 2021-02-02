@@ -5,7 +5,8 @@ import dotenv
 
 dotenv.load_dotenv()
 
-path = os.getenv('PATH')
+path = os.getenv('VOIP_PATH')
+
 app = Flask(__name__, static_folder='static')
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
