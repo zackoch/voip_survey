@@ -5,9 +5,7 @@ from voip_survey.models import Submission
 from voip_survey import os
 import requests
 from datetime import date
-from secrets import token_hex
-
-path = token_hex(6)
+from voip_survey import path
 
 
 headers = {
