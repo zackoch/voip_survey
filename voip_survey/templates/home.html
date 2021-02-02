@@ -1,0 +1,369 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container pt-3">
+    <h3 class="display-4 pb-3 text-center">Hosted VoIP Site Survey Form</h3>
+    <form action="{{ url_for('home') }}" method=POST novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {% if form.site_name.errors %}
+                {{ form.site_name(class="form-control form-control-lg is-invalid", placeholder="Site Name") }}
+                <div class="invalid-feedback">
+                    {% for error in form.site_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.site_name(class="form-control form-control-lg", placeholder="Site Name") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-4">
+                {% if form.site_code.errors %}
+                {{ form.site_code(class="form-control form-control-lg is-invalid", placeholder="Site Code") }}
+                <div class="invalid-feedback">
+                    {% for error in form.site_code.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.site_code(class="form-control form-control-lg", placeholder="Site Code") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-4">
+                {% if form.op_number.errors %}
+                {{ form.op_number(class="form-control form-control-lg is-invalid", placeholder="Operating Unit Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.op_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.op_number(class="form-control form-control-lg", placeholder="Operating Unit Number") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                {% if form.street_address.errors %}
+                {{ form.street_address(class="form-control form-control-lg is-invalid", placeholder="Street Address") }}
+                <div class="invalid-feedback">
+                    {% for error in form.street_address.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.street_address(class="form-control form-control-lg", placeholder="Street Address") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.city.errors %}
+                {{ form.city(class="form-control form-control-lg is-invalid", placeholder="City") }}
+                <div class="invalid-feedback">
+                    {% for error in form.city.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.city(class="form-control form-control-lg", placeholder="City") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-4">
+                {% if form.state.errors %}
+                {{ form.state(class="form-control form-control-lg is-invalid", placeholder="State") }}
+                <div class="invalid-feedback">
+                    {% for error in form.state.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.state(class="form-control form-control-lg", placeholder="State") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-2">
+                {% if form.zip_code.errors %}
+                {{ form.zip_code(class="form-control form-control-lg is-invalid", placeholder="Zip Code") }}
+                <div class="invalid-feedback">
+                    {% for error in form.zip_code.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.zip_code(class="form-control form-control-lg", placeholder="Zip Code") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.primary_full_name.errors %}
+                {{ form.primary_full_name(class="form-control form-control-lg is-invalid", placeholder="Contact Full Name") }}
+                <div class="invalid-feedback">
+                    {% for error in form.primary_full_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.primary_full_name(class="form-control form-control-lg", placeholder="Contact Full Name") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.primary_phone.errors %}
+                {{ form.primary_phone(class="form-control form-control-lg is-invalid", placeholder="Contact Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.primary_phone.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.primary_phone(class="form-control form-control-lg", placeholder="Contact Number") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.primary_email.errors %}
+                {{ form.primary_email(class="form-control form-control-lg is-invalid", placeholder="Primary Email") }}
+                <div class="invalid-feedback">
+                    {% for error in form.primary_email.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.primary_email(class="form-control form-control-lg", placeholder="Primary Email") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.timezone.errors %}
+                {{ form.timezone(class="form-control form-control-lg is-invalid", placeholder="Timezone") }}
+                <div class="invalid-feedback">
+                    {% for error in form.timezone.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.timezone(class="form-control form-control-lg", placeholder="Timezone") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.primary_retail_number.errors %}
+                {{ form.primary_retail_number(class="form-control form-control-lg is-invalid", placeholder="Primary Retail Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.primary_retail_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.primary_retail_number(class="form-control form-control-lg", placeholder="Primary Retail Phone Number") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.alternate_retail_number.errors %}
+                {{ form.alternate_retail_number(class="form-control form-control-lg is-invalid", placeholder="Alternate Retail Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.alternate_retail_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.alternate_retail_number(class="form-control form-control-lg", placeholder="Alternate Retail Phone Number") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.primary_priority_number.errors %}
+                {{ form.primary_priority_number(class="form-control form-control-lg is-invalid", placeholder="Primary Priority Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.primary_priority_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.primary_priority_number(class="form-control form-control-lg", placeholder="Primary Priority Phone Number") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.alternate_priority_number.errors %}
+                {{ form.alternate_priority_number(class="form-control form-control-lg is-invalid", placeholder="Alternate Priority Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.alternate_priority_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.alternate_priority_number(class="form-control form-control-lg", placeholder="Alternate Priority Phone Number") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.billing_number.errors %}
+                {{ form.billing_number(class="form-control form-control-lg is-invalid", placeholder="Billing Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.billing_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.billing_number(class="form-control form-control-lg", placeholder="Billing Phone Number") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.fax_number.errors %}
+                {{ form.fax_number(class="form-control form-control-lg is-invalid", placeholder="Fax Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.fax_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.fax_number(class="form-control form-control-lg", placeholder="Fax Phone Number") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.fire_number.errors %}
+                {{ form.fire_number(class="form-control form-control-lg is-invalid", placeholder="Fire Alarm Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.fire_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.fire_number(class="form-control form-control-lg", placeholder="Fire Alarm Phone Number") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.credit_number.errors %}
+                {{ form.credit_number(class="form-control form-control-lg is-invalid", placeholder="Credit Card Phone Number") }}
+                <div class="invalid-feedback">
+                    {% for error in form.credit_number.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.credit_number(class="form-control form-control-lg", placeholder="Credit Card Phone Number") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                {% if form.maximum_calls.errors %}
+                {{ form.maximum_calls(class="form-control form-control-lg is-invalid", placeholder="Maximum Calls") }}
+                <div class="invalid-feedback">
+                    {% for error in form.maximum_calls.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.maximum_calls(class="form-control form-control-lg", placeholder="Maximum Calls") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {% if form.wired_desk_qty.errors %}
+                {{ form.wired_desk_qty(class="form-control form-control-lg is-invalid", placeholder="Wired Desk Phone Quantity") }}
+                <div class="invalid-feedback">
+                    {% for error in form.wired_desk_qty.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.wired_desk_qty(class="form-control form-control-lg", placeholder="Wired Desk Phone Quantity") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-4">
+                {% if form.cordless_qty.errors %}
+                {{ form.cordless_qty(class="form-control form-control-lg is-invalid", placeholder="Cordless Handset Quantity") }}
+                <div class="invalid-feedback">
+                    {% for error in form.cordless_qty.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.cordless_qty(class="form-control form-control-lg", placeholder="Cordless Handset Quantity") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-4">
+                {% if form.overhead_paging.errors %}
+                {{ form.overhead_paging(class="form-control form-control-lg is-invalid", placeholder="Overhead Paging Required") }}
+                <div class="invalid-feedback">
+                    {% for error in form.overhead_paging.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.overhead_paging(class="form-control form-control-lg", placeholder="Overhead Paging Required?")
+                }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.carrier.errors %}
+                {{ form.carrier(class="form-control form-control-lg is-invalid", placeholder="Phone Service Provider") }}
+                <div class="invalid-feedback">
+                    {% for error in form.carrier.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.carrier(class="form-control form-control-lg", placeholder="Phone Service Provider") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.isp.errors %}
+                {{ form.isp(class="form-control form-control-lg is-invalid", placeholder="Internet Service Provider") }}
+                <div class="invalid-feedback">
+                    {% for error in form.isp.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.isp(class="form-control form-control-lg", placeholder="Internet Service Provider") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {% if form.outbound_cid.errors %}
+                {{ form.outbound_cid(class="form-control form-control-lg is-invalid", placeholder="Outbound Caller ID") }}
+                <div class="invalid-feedback">
+                    {% for error in form.outbound_cid.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.outbound_cid(class="form-control form-control-lg", placeholder="Outbound Caller ID") }}
+                {% endif %}
+            </div>
+            <div class="form-group col-md-6">
+                {% if form.modem_config.errors %}
+                {{ form.modem_config(class="form-control form-control-lg is-invalid", placeholder="Modem Configuration") }}
+                <div class="invalid-feedback">
+                    {% for error in form.modem_config.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}modem_config
+                </div>
+                {% else %}
+                {{ form.modem_config(class="form-control form-control-lg", placeholder="Modem Configuration") }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-row justify-content-center mt-2 mb-2">
+            <div class="form-group col-md-12">
+                {{ form.submit(class="btn btn-success btn-block") }}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+
+
+
+
