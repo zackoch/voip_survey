@@ -5,6 +5,7 @@ import dotenv
 
 dotenv.load_dotenv()
 
+global path
 path = os.getenv('VOIP_PATH')
 
 app = Flask(__name__, static_folder='static')
