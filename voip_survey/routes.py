@@ -28,7 +28,7 @@ def auth():
     return render_template('auth.html', title='Authenticate', form=form)
 
 
-@app.route("/voip/" + path, methods=['GET', 'POST'])
+@app.route("/voip/" + str(path), methods=['GET', 'POST'])
 def home():
     form = QuestionnaireForm()
     if form.validate_on_submit():
